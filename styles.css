@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --divColor: #f0fff0;
+    --paragraphColor: #444444;
+    --ease: all 0.4s ease;
+    --radius: 6px;
+}
+
+body{
+    background-color: var(--divColor)
+}
+
+/* aboutme */
+.container{
+    width: 85%;
+    margin: auto;
+}
+.grid1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+}
+/* .about1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.about-section .about-img{
+    width: 60%;
+    /* height: 450px; */
+    border-radius: 30px;
+    margin-left: auto;
+
+}
+@media (max-width: 1000px) {
+    .about-section .about-img{
+        width: 80%;
+    }
+    @media (max-width: 800px){
+        .about-section{
+            display: block;
+        }
+        .about-section .about-img{
+            display: none;
+        }
+    }
+}
+/* education and experience */
+.education,
+.experience{
+    display: flex;
+    justify-content: space-between;
+}
+/* hobbies */
+.hobby-list{
+    list-style-type: square;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 800px) {
+    .education,
+    .experience{
+        flex-direction: column;
+        width: 100%;
+        
+    }
+    .hobby-list{
+        list-style-type: none;
+    }
+}
+
+/* contact */
