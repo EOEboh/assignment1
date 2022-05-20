@@ -15,28 +15,75 @@ body{
 }
 
 /* nav bar */
+input[type='checkbox']{
+    display: none;
+}
+.hamburger{
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
 .nav-container{
     background-color: var(--paragraphColor);
     padding: 0.1rem;
     margin-bottom: 2rem;
 }
 .navbar{
+    margin: 2rem 1.2rem;
+}
+.navbar .menu{
     display: flex;
     justify-content: space-around;
-    margin: 2rem 5rem;
+    
     
 }
-.navbar div a{
+.navbar .menu a{
     text-decoration: none;
     color: var(--divColor);
     padding: 1rem;
     border-radius: var(--radius);
     font-weight: 500;
 }
+.navbar .menu li{
+    list-style-type: none;
+}
 .navbar div a:hover{
     background-color: var(--divColor);
     color: var(--paragraphColor);
 }
+ @media(max-width: 768px){
+     .navbar{
+         position: relative;
+     }
+     .navbar .menu{
+         display: none;
+         position: absolute;
+         right: 0;
+         left: 0;
+         text-align: center;
+         padding: 16px 0;
+     }
+     .navbar .menu li:hover{
+         display: inline-block;
+         transition: 0.3s ease;
+         transform: translate(35%);
+     }
+     .navbar .menu{
+         background-color: var(--paragraphColor);
+     }
+    .menu li + li{
+         margin-top: 20px;
+     }
+     input[type='checkbox']:checked ~ .menu{
+         display: block;
+         transition: 2s ease;
+     }
+     .hamburger{
+         display: flex;
+         justify-content: end;
+     }
+     
+ }
 
 /* aboutme */
 .container{
@@ -139,6 +186,9 @@ input[type='email']{
     border-radius: var(--radius);
     border: none;
     margin-bottom: 1rem;
+}
+#message-div{
+    text-align: center;
 }
 
 select {
